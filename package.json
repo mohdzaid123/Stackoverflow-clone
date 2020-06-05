@@ -1,17 +1,15 @@
 {
   "name": "devconnector",
   "version": "1.0.0",
-  "description": "Social Network developers",
+  "description": "Social network for developers",
   "main": "server.js",
-  "engines": {
-    "node": "12.14.1"
-  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Zaid",
   "license": "ISC",
